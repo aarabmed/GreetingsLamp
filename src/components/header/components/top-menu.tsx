@@ -20,31 +20,53 @@ const Navigation = forwardRef<React.Component, Props>(({onMouseLeave,onMouseOver
 
       return items.map((option)=>{
   
-        return(
-          <SubMenu className="gl-menu-li" key={`${option._id}+-${option.name}`} title={<Link href={`/${option.slug}`}>{option.name}</Link> } popupClassName="bc-menu-popup">
+        return (
+          <SubMenu
+            className="gl-menu-li"
+            key={`${option._id}+-${option.name}`}
+            title={<Link href={`/${option.slug}`}>{option.name}</Link>}
+            popupClassName="bc-menu-popup"
+          >
             <Menu.ItemGroup className="menuGroup">
-              {option.category.map((cat,index)=>
-                <Menu.ItemGroup  title={<Link href={`/${option.slug}/${cat.slug}`}>{cat.name}</Link> } key={cat._id} className="bc-menu-sub-item-group" onClick={()=>{}}>
-                    {cat.subCategory.map(el=>
-                        <Menu.Item key={el._id+`-${option.name}-${cat.name}-${el.name}`} className="bc-menu-sub-items" >
-                                <Link href={'/'+option.slug+'/'+cat.slug+'/'+el.slug}>{el.name}</Link>
-                        </Menu.Item>
-                    )}
+              {option.category.map((cat, index) => (
+                <Menu.ItemGroup
+                  title={
+                    <Link href={`/${option.slug}/${cat.slug}`}>{cat.name}</Link>
+                  }
+                  key={cat._id}
+                  className="bc-menu-sub-item-group"
+                >
+                  {cat.subCategory.map((el) => (
+                    <Menu.Item
+                      key={el._id + `-${option.name}-${cat.name}-${el.name}`}
+                      className="bc-menu-sub-items"
+                    >
+                      <Link
+                        href={
+                          "/" + option.slug + "/" + cat.slug + "/" + el.slug
+                        }
+                      >
+                        {el.name}
+                      </Link>
+                    </Menu.Item>
+                  ))}
                 </Menu.ItemGroup>
-              )}
+              ))}
             </Menu.ItemGroup>
-            <div className="image-pop-menu" >
-                <IKContext urlEndpoint="https://ik.imagekit.io/gl">
-                    <IKImage 
-                      path={option.image.filePath} 
-                      transformation={[{
-                          "width": "250"
-                      }]}
-                    />
-                </IKContext>
+            <div className="image-pop-menu">
+              <IKContext urlEndpoint="https://ik.imagekit.io/gl">
+                <IKImage
+                  path={option.image.filePath}
+                  transformation={[
+                    {
+                      width: "250",
+                    },
+                  ]}
+                />
+              </IKContext>
             </div>
           </SubMenu>
-        )
+        );
       })
   }
 

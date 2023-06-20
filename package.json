@@ -38,6 +38,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-connect": "^0.10.0",
     "next-images": "^1.8.4",
+    "next-plugin-antd-less": "^1.8.0",
     "next-with-less": "^2.0.5",
     "nextjs-redirect": "^5.0.0",
     "node-fetch": "^2.6.1",

@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
     "paths": {
-      "public/*": ["../public/*"],
-      "assets/*": ["assets/*"],
-      "@@/*": ["../src/*"],
+      "public/*": [
+        "../public/*"
+      ],
+      "assets/*": [
+        "assets/*"
+      ],
+      "@@/*": [
+        "../src/*"
+      ]
     },
     "baseUrl": "src",
     "target": "esnext",
@@ -14,10 +20,13 @@
       "esnext.asynciterable",
       "esnext.intl",
       "es2017.intl",
-      "es2018.intl" 
+      "es2018.intl"
     ],
     "allowJs": true,
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -27,15 +36,18 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
     "additional.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "./src/**/*", "api/utils/session.js", "../login.tsx",
-    ],
+    "./src/**/*",
+    "api/utils/session.js",
+    "../login.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]
